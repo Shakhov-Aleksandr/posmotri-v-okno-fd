@@ -16,6 +16,10 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -35,6 +39,40 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.content {
+  display: grid;
+  align-items: end;
+  width: 1140px;
+  height: 534px;
+  grid-template-columns: 711px 399px;
+  column-gap: 30px;
+  grid-template-areas: 
+  "result content__details";
+}
+
+.result {
+  grid-area: result;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.content__details {
+  height: 100%;
+  width: 100%;
+  grid-area: content__details;
+}
+
+.content__list-container {
+  height: 298px;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: scroll;
 }
 
 /* Кастомный скроллбар */
