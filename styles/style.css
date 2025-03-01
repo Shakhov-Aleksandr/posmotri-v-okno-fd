@@ -5,6 +5,7 @@
 }
 
 html {
+  height: 100%;
   block-size: 100%;
 }
 
@@ -16,7 +17,6 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,12 +94,25 @@ ol {
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 5px;
+  cursor: default;
+}
+
+.search-form__label {
+  display: flex;
+  gap: 5px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__label:has(:not(:active):focus-visible) {
+  outline: 1px solid white;
+  outline-offset: 2px;
 }
 
 .search-form__textfield {
   font-weight: 400;
   font-size: 18px;
-  font-family: 'Fira Sans Condensed';
+  font-family: 'Fira Sans Condensed', sans-serif;
   background-color: transparent;
   width: 225px;
   height: 27px;
@@ -121,21 +134,9 @@ ol {
   border-left-color: white;
 }
 
-.search-form__label:has(:not(:active):focus-visible) {
-  outline: 1px solid white;
-  outline-offset: 2px;
-}
-
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
-}
-
-.search-form__label {
-  display: flex;
-  gap: 5px;
-  width: fit-content;
-  cursor: pointer;
 }
 
 .search-form__checkbox-list > .search-form__label:hover {
@@ -163,13 +164,13 @@ ol {
   visibility:hidden;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::after  {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   visibility: visible;
 }
 
 .button {
   padding: 6px;
-  font-family: 'Fira Sans Condensed';
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: bold;
   background-color: transparent;
   border: 1px solid white;
@@ -197,11 +198,6 @@ ol {
   align-self: flex-end;
 }
 
-.more-button {
-  width: 100%;
-  margin-bottom: 2px;
-}
-
 .content__details {
   height: 100%;
   width: 100%;
@@ -215,7 +211,7 @@ ol {
   font-weight: bold;
   line-height: 94%;
   text-transform: uppercase;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
 }
 
 .content__accent {
@@ -226,19 +222,19 @@ ol {
   position: relative;
   height: 298px;
   width: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: auto;
   padding-right: 3px;
 }
 
 .content__list {
   display: flex;
   flex-direction: column;
+  gap: 30px;
+  margin-bottom: 30px;
 }
 
 .content__list-item {
   display: block;
-  margin-bottom: 30px;
   padding-left: 3px;
   padding-right: 3px;
 }
@@ -252,7 +248,7 @@ ol {
   background-color: #545050;
 }
 
-.content__card-link_current .content__video-card{
+.content__card-link_current .content__video-card {
   background-color: #545050;
 }
 
@@ -285,7 +281,7 @@ ol {
   font-size: 30px;
   font-weight: bold;
   line-height: 100%;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   text-transform: uppercase;
   overflow: hidden;
   white-space: nowrap;
@@ -305,6 +301,11 @@ ol {
   height: 103px;
   object-fit: cover;
   object-position: center;
+}
+
+.more-button {
+  width: 100%;
+  margin-bottom: 2px;
 }
 
 /* Кастомный скроллбар */
